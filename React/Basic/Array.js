@@ -22,8 +22,5 @@ console.log(
   D.filter((a) => ["boolean", "string", "object"].includes(typeof a))
 );
 
-// const da = "ajmal_Deve@la";
-// console.log(da.split("_").join("").split("@").join(""));̥ // 
 
-const da = "ajmal_Deve@la";
-console.log(da.split(/[_@]/).join(""));
+

@@ -1,0 +1,129 @@
+Git is a distributed version control system (VCS) that allows multiple people to work on a project 
+simultaneously without interfering with each other's work. 
+It tracks changes in files and directories over time,
+enabling you to manage and organize your codebase effectively. Below is an overview of Git, its key concepts, and how it works.
+
+%............................ Setting Your Global Username and Email.....................................>>>
+Set your global username:
+
+git config --global user.name "Your Name"
+% Set your global email:
+
+
+git config --global user.email "your.email@example.com"
+% Setting Username and Email for a Specific Repository
+
+git config --global --list
+% View local settings (for the current repository):
+
+git config --list
+
+%...................................Basic Git Commands..................................................>>>
+
+1)git init
+% Initializes a new Git repository in the current directory.
+git init
+
+2)git clone
+% Copies an existing Git repository (usually from a remote server) to your local machine.
+git clone <repository_url>
+
+3)git add
+% Adds files to the staging area, preparing them to be committed.
+git add <file_name>
+git add .   # Adds all changes
+
+4)git commit
+% Records changes in the repository with a descriptive message.
+git commit -m "Your commit message"
+
+5)git status
+% Shows the status of changes as untracked, modified, or staged.
+git status
+
+6)git push
+% Sends your committed changes to a remote repository (e.g., GitHub).
+git push origin <branch_name>
+
+7)git pull
+% Fetches and integrates changes from a remote repository into your local branch.
+git pull origin <branch_name>
+
+
+8)git branch
+% Lists all branches in your repository or creates/deletes branches.
+git branch          # List branches
+git branch <name>   # Create a new branch
+git branch -d <name>  # Delete a branch
+
+9)git checkout
+% Switches to a different branch or restores files to a specific state.
+git checkout <branch_name>  # Switch to another branch
+git checkout -- <file_name>  # Discard changes in a file
+
+10)git merge
+% Combines changes from one branch into another branch.
+git merge <branch_name>
+
+11)git log
+% Shows the commit history for the repository.
+git log
+
+12)git diff
+% Shows the changes between commits, branches, or your working directory and the staging area.
+git diff
+
+13)git remote
+% Manages the set of repositories ("remotes") whose branches you track.
+git remote -v         # List remotes
+git remote add origin <url>  # Add a remote repository
+
+% ..........................................Advanced Git Commands .....................................>>>>
+
+1)git stash
+% Temporarily stores changes that are not ready to be committed, allowing you to work on something else.
+git stash
+git stash pop         # Apply the most recent stash and remove it from the stash list
+git stash list        # List all stashed changes
+
+2)git rebase
+% Reapplies commits on top of another base tip. This is used to maintain a clean commit history.
+git rebase <branch_name>
+
+3)git reset
+% Undoes changes by moving the HEAD to a previous commit. Can be used to unstage files or undo commits.
+git reset <commit_hash>     # Reset to a specific commit
+git reset --soft HEAD~1     # Undo the last commit, keep changes staged
+git reset --hard HEAD~1     # Undo the last commit and discard changes
+
+4)git cherry-pick
+% Applies changes from specific commits from another branch.
+git cherry-pick <commit_hash>
+
+5)git fetch
+% Downloads changes from a remote repository, but does not integrate them into your working branch.
+git fetch origin
+
+6)git tag
+% Marks specific points in the commit history as important, usually for releases.
+git tag <tag_name>
+git push origin <tag_name>   # Push a tag to a remote
+
+7)git blame
+% Shows what revision and author last modified each line of a file.
+git blame <file_name>
+
+8)git show
+% Shows various types of objects (commits, tags, etc.).
+git show <commit_hash>
+
+9)git revert
+% Creates a new commit that undoes the changes from a previous commit.
+git revert <commit_hash>
+
+10)git clean
+% Removes untracked files from your working directory.
+git clean -f          # Remove untracked files
+git clean -fd         # Remove untracked files and directories
+
+% >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
