@@ -23,4 +23,10 @@ console.log(
 );
 
 
+const aa =[1,2,5,]
+const bb = [1,4,6,5]
+let c = aa.filter((a => bb.includes(a)))
+console.log(c)
+
+
 
