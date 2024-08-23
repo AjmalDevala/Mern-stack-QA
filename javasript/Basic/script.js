@@ -31,4 +31,4 @@ function isValidParentheses(s) {
 }
 // ........//...........................................................................................................
 
-// console.log(isValidParentheses("([])()"));
+console.log(isValidParentheses("(()))()"));
