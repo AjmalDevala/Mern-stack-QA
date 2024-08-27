@@ -41,4 +41,5 @@
 // const reverse = palindrome.split("").reverse().join("");
 // console.log(palindrome == reverse); //true
 
+// console.log([]+[]) //''
 
