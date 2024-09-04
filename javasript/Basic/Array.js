@@ -2,12 +2,15 @@
 const a = [
   {
     name: "ajmal",
+    Amount: "30",
   },
   {
     name: "hisham",
+    Amount: "50",
   },
   {
     name: "ajith",
+    Amount: "60",
   },
 ];
 
@@ -22,11 +25,10 @@ console.log(
   D.filter((a) => ["boolean", "string", "object"].includes(typeof a))
 );
 
+const totalSum = a.reduce((sum, invoice) => sum + parseInt(invoice.Amount), 0); //  in the case where the array contains numbers as strings, use the parseInt() method to convert them to numbers
+console.log(totalSum);
 
-const aa =[1,2,5,]
-const bb = [1,4,6,5]
-let c = aa.filter((a => bb.includes(a)))
-console.log(c)
-
-
-
+const aa = [1, 2, 5];
+const bb = [1, 4, 6, 5];
+let c = aa.filter((a) => bb.includes(a));
+console.log(c);
