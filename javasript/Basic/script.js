@@ -31,4 +31,13 @@ function isValidParentheses(s) {
 }
 // ........//...........................................................................................................
 
-console.log(isValidParentheses("(()))()"));
+// console.log(isValidParentheses("(()))()"));
+
+
+
+let a=()=>{
+  return 10
+} ;
+console.log(b)
+let b =20;
+

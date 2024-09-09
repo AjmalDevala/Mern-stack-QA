@@ -4,6 +4,24 @@
 // The JavaScript code can be inserted into HTMl pages that can be understood and executed by web browsers
 // whil also supporting object-oriented programming abilities
 
+///.................................
+
+var a ; // Function-scoped, hoisted with undefined, can be reassigned and redeclared.
+let a;  // Block-scoped, hoisted but not initialized, can be reassigned but not redeclared.
+const test =null;  // Block-scoped, hoisted but not initialized, cannot be reassigned or redeclared.
+
+
+// eg:-
+var x = 1;
+var x = 2; // Valid
+
+let le = 3;
+y = 4; // Valid
+// let le = 5; // Error: 'y' has already been declared
+
+const z = 6;
+z = 7; // Error: Assignment to constant variable
+
 /////....................................DATA TYPE......................................./////
 
 // JavaScript has 13 Datatypes
@@ -76,6 +94,14 @@ let today = new Date();
 //  RegExp
 let pattern = /abc/;
 
+/// ......................What are the scopes of a variable in JavaScript?.....///
+
+
+Global-Scope;  // It is used to access the variables and functions from anywhere inside the code. 
+Function-scope; // It is used to declare the function and variables inside the function itself and not outside. 
+Block-Scope;  // It  uses let and const to declare the variables.
+
+
 /// .............................ARRAY METHOD.........................................///
 
 // Basic Array Methods
@@ -125,7 +151,8 @@ Object.groupBy(object, callback);
 
 ("a set of statements that performs a task or calculates a value");
 
-// What is Callback in JavaScript?
+//......................................... What is Callback in JavaScript?..................................................//
+
 ("In JavaScript, functions are objects and therefore, functions can take other functions as arguments and can also be returned by other functions");
 ("A callback  is a function that is passeed as a arguments ");
 ("A callback is a JavaScript function that is passed to another function as an argument or a parameter");
@@ -144,6 +171,21 @@ Example: function abc() {
 Example: var a = function abc() {
   return 5;
 };
+// ............................................Higher Order Functions (with examples) ................................//
+
+//Higher-order functions are the functions that {take functions as arguments} and return them by operating on other functions
+
+Example:
+
+function higherOrder(fn)
+
+ {
+
+  fn();
+
+} 
+
+higherOrder(function() { console.log("Hello world") });
 // .................................. what is closure ..............................................................//
 
 // A closure in JavaScript happens when a function remembers and can use variables from its outer function, even after the outer function has finished running.
@@ -159,3 +201,15 @@ function outer() {
 
 const closure = outer(); // outer finishes but returns inner
 closure(); // inner still remembers 'name'
+
+
+
+//......................Explain Hoisting in javascript...................... dicration moviing top eg(wrorking flow)..........................................//
+
+
+var  // declarations are hoisted but initialized with undefined.
+Function // declarations are fully hoisted, allowing usage before declaration. (give the out put )
+let and //const  // Are hoisted but not initialized, and accessing them before declaration throws a ReferenceError.
+
+
+
