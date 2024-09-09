@@ -1,21 +1,38 @@
 ///................................. What is javaScript ....................................////
 
-// JavaScript is a popular web scripting language and is used for client-side and server-side development 
-// The JavaScript code can be inserted into HTMl pages that can be understood and executed by web browsers 
+// JavaScript is a popular web scripting language and is used for client-side and server-side development
+// The JavaScript code can be inserted into HTMl pages that can be understood and executed by web browsers
 // whil also supporting object-oriented programming abilities
 
 /////....................................DATA TYPE......................................./////
 
-// JavaScript has 8 Datatypes
+// JavaScript has 13 Datatypes
+
+PrimitiveTypes; //{Immutable} means the data cannot be changed once created
+
+String, Number, Boolean, Null, Undefined, Symbol, BigInt.Non - primitiveTypes; // {mutable}  :data can be changed
+
+Object, Array, Function, Date, RegExp;
+
+// Primitive types are {"immutable"}, meaning their values cannot be changed, while non-primitive types are {mutable.}
+
+// ................. Primitive Data Types.....................
 
 String; //For characters and alphanumeric values
 Number; //For integer and floating-point numbers
-Bigint;
 Boolean; //For true and false values
-Undefined; //For variables that are only declared and not defined or initialized
 Null; //For empty or unknown values
+Undefined; //For variables that are only declared and not defined or initialized
 Symbol; //For unique identifiers for objects
+Bigint; //(ES2020): Used for representing integers larger than the Number type can handle
+
+// ...........// Non-Primitive (Reference) Data Types: // ...........................//
+
 Object; // For collections or complex values
+Array; //A type of object used to store multiple values in a single variable, organized as a list.
+Function; ///A type of object used to define {reusable blocks of code.}
+Date; //Represents dates and times.
+RegExp; //Represents regular expressions for {pattern matching}.
 
 // Numbers:
 let length = 16;
@@ -29,6 +46,11 @@ let lastName = "Johnson";
 let x = true;
 let y = false;
 
+// bigint
+let bigNumber = BigInt(1234567890123456789012345678901234567890n);
+
+//.....................................................................................//
+
 // Object:
 const person = { firstName: "John", lastName: "Doe" };
 
@@ -37,6 +59,22 @@ const cars = ["Saab", "Volvo", "BMW"];
 
 // Date object:
 const date = new Date("2022-03-25");
+
+//  function:
+function greet() {
+  // normal function
+  console.log("Hello");
+}
+const function2 = () => {
+  //  Arrow funtion
+  console.log("Hello");
+};
+
+//  Date :
+let today = new Date();
+
+//  RegExp
+let pattern = /abc/;
 
 /// .............................ARRAY METHOD.........................................///
 
