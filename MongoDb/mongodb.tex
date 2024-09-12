@@ -1,0 +1,112 @@
+% // ..................what is mongodb...............................//
+
+MongoDB is a NoSQL, document-oriented database designed for high performance, scalability,
+and flexibility. Unlike traditional relational databases that use tables and rows, 
+MongoDB stores data in flexible, JSON-like documents.
+
+
+% .......................Key Concepts of MongoDB.............................///
+
+> Document :
+
+The basic unit of data in MongoDB, similar to a row in a relational database.
+Stored in BSON (Binary JSON) format.
+
+eg:
+
+{
+  "_id": 1,
+  "name": "John Doe",
+  "age": 29,
+  "address": {
+    "street": "123 Main St",
+    "city": "New York"
+  }
+}
+
+>  Collection:
+
+A group of documents, similar to a table in relational databases.
+Collections do not enforce a schema, so documents in a collection can have different fields.
+Example: users collection can store different user documents.
+
+>  Database:
+
+A physical container for collections. Each database gets its own set of files on the file system.
+You can have multiple databases in MongoDB.
+
+>  _id Field:
+
+A unique identifier for each document. If not provided, MongoDB automatically generates one.
+Similar to a primary key in relational databases.
+
+> BSON (Binary JSON):
+
+MongoDB stores data in BSON format, which is a binary representation of JSON-like documents.
+
+% .................................Basic MongoDB Commands.................................. //
+
+% Connect to MongoDB:
+
+mongo
+% /..........................{Create or Switch to a Database}.....
+
+use myDatabase
+
+
+% Insert a Document:
+
+db.users.insertOne({
+  "name": "John Doe",
+  "age": 29,
+  "email": "john@example.com"
+})
+% .........................Find Documents:
+
+% Retrieve all documents from a collection:
+
+
+db.users.find()
+
+% Retrieve documents with specific criteria:
+
+db.users.find({ age: 29 })
+
+% ...........Update a Document:
+
+db.users.updateOne(
+  { name: "John Doe" },
+  { $set: { age: 30 } }
+)
+% .........Delete a Document:
+
+db.users.deleteOne({ name: "John Doe" })
+
+% ..........................Create an Index:
+
+% Indexes help MongoDB to search data faster.
+
+db.users.createIndex({ name: 1 })
+
+% ........Show Databases: 
+show dbs
+
+% ........Show Collections:
+
+show collections
+% ....... Drop a Collection:
+
+db.users.drop()
+%....... Drop a Database:
+
+db.dropDatabase()
+
+%  ................................Use Cases for MongoDB:.....................................
+
+Content Management Systems: MongoDB’s flexibility allows storing different types of content.
+Real-time Analytics: The database can handle large volumes of real-time data.
+Internet of Things (IoT): MongoDB’s ability to scale and store varied data structures makes it ideal for IoT applications.
+E-commerce Applications: It is often used to manage product catalogs and user data.
+MongoDB is highly flexible and a popular choice for developers working on modern, data-driven applications.
+
+// const db=mongoose.
