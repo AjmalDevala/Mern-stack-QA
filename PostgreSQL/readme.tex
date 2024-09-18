@@ -10,3 +10,16 @@ from small-scale projects to large enterprise systems
 The following conventions are used in the synopsis of a command:( brackets )([ and ]) indicate optional parts.
 (Braces) ({ and }) and (vertical lines) (|) indicate that you must choose one alternative. 
 Dots (...) mean that the preceding element can be repeated. All other symbols, including parentheses, should be taken literally.
+
+
+% // ................BASIS METHOD..............................................................//
+
+% Select query with LEFT/RIGHT/FULL JOINs on multiple tables
+
+SELECT column, another_column, …
+FROM mytable
+INNER/LEFT/RIGHT/FULL JOIN another_table 
+    ON mytable.id = another_table.matching_id
+WHERE condition(s)
+ORDER BY column, … ASC/DESC
+LIMIT num_limit OFFSET num_offset;
