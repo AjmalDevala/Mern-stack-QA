@@ -133,23 +133,25 @@ Subqueries (nested queries):
 
 Retrieves users whose age is greater than the average age of all users.
 
-Use CASE for conditional logic in SQL:
+Use {CASE for conditional} logic in SQL:
 
 
-SELECT name, Age,
-CASE
-    WHEN Age < 18 THEN 'Minor'
-    WHEN Age BETWEEN 18 AND 64 THEN 'Adult'
-    ELSE 'Senior'
-END AS Age_Group
-FROM Users;
+% SELECT name, Age,
+% CASE
+%     WHEN Age < 18 THEN 'Minor'
+%     WHEN Age BETWEEN 18 AND 64 THEN 'Adult'
+%     ELSE 'Senior'
+% END AS Age_Group
+% FROM Users;
+
 Use transactions for multiple queries:
 
 
-BEGIN;
+% BEGIN;
+% UPDATE Users SET Age = Age + 1 WHERE id = 1;
+% DELETE FROM Users WHERE id = 2;
+% COMMIT;
 
-UPDATE Users SET Age = Age + 1 WHERE id = 1;
-DELETE FROM Users WHERE id = 2;
-
-COMMIT;
-These queries can give your readers a good mix of basic to advanced SQL operations, helping them understand core SQL functionalities as well as more complex operations such as joins, subqueries, and transactions.
+These queries can give your readers a good mix of basic to advanced SQL operations, 
+helping them understand core SQL functionalities as well as more complex operations such as joins,
+ subqueries, and transactions.
