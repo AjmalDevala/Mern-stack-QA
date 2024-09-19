@@ -69,8 +69,7 @@ Retrieves all users and orders them by Age in ascending order.
 
 {Insert} a new record into the Users table: //INSERT INTO table name ('datas') values ('datas')
 
-% INSERT INTO Users (name, age, email, password)
-% VALUES ('John Doe', 30, 'john@example.com', 'hashed_password');
+% INSERT INTO Users (name, age, email, password) VALUES ('John Doe', 30, 'john@example.com', 'hashed_password');
 
 {Update} an existing record:
 
@@ -81,8 +80,7 @@ Retrieves all users and orders them by Age in ascending order.
 
 {Delete} a record from the Users table:
 
-% DELETE FROM Users
-% WHERE name = 'John Doe';
+% DELETE FROM Users WHERE name = 'John Doe';
 
 Use LIKE for pattern matching (wildcards):
 
@@ -110,7 +108,7 @@ Group records using GROUP BY and aggregate functions:
 
 
 % SELECT Age, COUNT(*) AS num_users
-% FROM Users
+% FROM Users //I kindly request 2 days off to collect my graduation certificate.
 % GROUP BY Age;
 
 This groups users by their age and counts the number of users in each age group.
@@ -155,3 +153,9 @@ Use transactions for multiple queries:
 These queries can give your readers a good mix of basic to advanced SQL operations, 
 helping them understand core SQL functionalities as well as more complex operations such as joins,
  subqueries, and transactions.
+
+
+ %  ......................................TRUNCATE TABLE ................................................%
+ removes all rows from a table, but the table structure and its columns, constraints, indexes, and so on, remain. 
+ %  ......................................DROP TABLE ................................................%
+ To remove the table definition in addition to its data, use the DROP TABLE statement.
