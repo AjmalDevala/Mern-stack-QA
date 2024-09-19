@@ -1,4 +1,4 @@
-What Is PostgreSQL? 
+What Is PostgreSQL?  our local db SQL Shell password {mobile password:eg 5....0}
 
 PostgreSQL (often referred to as Postgres) is a powerful, open-source,object-relational database management system (ORDBMS). 
 It is known for its reliability, feature set, and standards compliance. 
@@ -23,3 +23,133 @@ INNER/LEFT/RIGHT/FULL JOIN another_table
 WHERE condition(s)
 ORDER BY column, … ASC/DESC
 LIMIT num_limit OFFSET num_offset;
+
+
+% Users is the Table      (NAME ,Age , Email , Password,)
+
+NAME | AGE| EMAIL      |PASSWORD
+............................... 
+Aaa  | 12 |  AAA@GMAIL | 12345
+BBB  | 13 |  bbb@GMAIL | 12352
+CCC  | 15 |  ccc@GMAIL | 12523
+
+% ........................ Basic SQL Queries:.....................................%
+
+{Select all} columns from the Users table:
+
+% SELECT * FROM Users;
+
+This retrieves all records and columns from the Users table.
+
+Select {specific columns }(e.g., name) from the Users table:
+
+% SELECT name FROM Users;
+
+This retrieves only the name column from the Users table.
+
+{Filter records }using the WHERE clause:
+
+% SELECT * FROM Users WHERE Age > 25;
+
+Retrieves users who are older than 25.
+
+Use DISTINCT to remove {duplicates}:
+
+% SELECT DISTINCT Email FROM Users;
+
+Retrieves unique email addresses from the Users table.
+
+Order the results using {ORDER BY:} // ascending (ASC) designing(DESC)
+
+
+% SELECT * FROM Users ORDER BY Age ASC;
+Retrieves all users and orders them by Age in ascending order.
+
+% ...............................Intermediate SQL Queries............................%
+
+{Insert} a new record into the Users table: //INSERT INTO table name ('datas') values ('datas')
+
+% INSERT INTO Users (name, age, email, password)
+% VALUES ('John Doe', 30, 'john@example.com', 'hashed_password');
+
+{Update} an existing record:
+
+% UPDATE Users
+% SET email = 'john.doe@example.com'
+% WHERE name = 'John Doe';
+
+
+{Delete} a record from the Users table:
+
+% DELETE FROM Users
+% WHERE name = 'John Doe';
+
+Use LIKE for pattern matching (wildcards):
+
+
+% SELECT * FROM Users
+% WHERE email LIKE '%example.com';
+
+Retrieves all users whose email ends with example.com.
+
+% ......................................Advanced SQL Queries:.................................%
+
+
+
+% Use aggregate functions (COUNT, SUM, AVG, etc.):
+
+Count all users:
+
+% SELECT COUNT(*) FROM Users;
+
+Get the average age of users:
+
+% SELECT AVG(Age) FROM Users;
+
+Group records using GROUP BY and aggregate functions:
+
+
+% SELECT Age, COUNT(*) AS num_users
+% FROM Users
+% GROUP BY Age;
+
+This groups users by their age and counts the number of users in each age group.
+
+Join two tables (e.g.,{ Posts} and Users): // post table also There
+
+
+% SELECT Users.name, Posts.title
+% FROM Users
+% JOIN Posts ON Users.id = Posts.user_id;
+
+
+This retrieves the names of users and their corresponding blog post titles.
+
+Subqueries (nested queries):
+
+
+% SELECT * FROM Users
+% WHERE Age > (SELECT AVG(Age) FROM Users);
+
+Retrieves users whose age is greater than the average age of all users.
+
+Use CASE for conditional logic in SQL:
+
+
+SELECT name, Age,
+CASE
+    WHEN Age < 18 THEN 'Minor'
+    WHEN Age BETWEEN 18 AND 64 THEN 'Adult'
+    ELSE 'Senior'
+END AS Age_Group
+FROM Users;
+Use transactions for multiple queries:
+
+
+BEGIN;
+
+UPDATE Users SET Age = Age + 1 WHERE id = 1;
+DELETE FROM Users WHERE id = 2;
+
+COMMIT;
+These queries can give your readers a good mix of basic to advanced SQL operations, helping them understand core SQL functionalities as well as more complex operations such as joins, subqueries, and transactions.
