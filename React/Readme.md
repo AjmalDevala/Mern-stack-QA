@@ -53,6 +53,7 @@ Props are like arguments that you pass into a component to give it data from its
 JSX (JavaScript XML): React uses JSX, which is like HTML in your JavaScript code. It makes it easier to write components.
 
 <!-- example -->
+
 function WelcomeMessage(props) {
   return <h1>Hello, {props.name}!</h1>;
 }
@@ -82,6 +83,7 @@ function Button(props) {
 <!-- working -->
 
 export default App;
+
 Explanation:
 The App component renders a title and a Button.
 The Button component receives a text prop to display "Click Me" inside the button.
