@@ -81,6 +81,8 @@ code:
   }
 </script>
 
+
+
 Explanation:
 
     When the user clicks the button, the showMessage() function is called, which displays an alert message "Hello, World!"
