@@ -1,0 +1,107 @@
+<!-- .......................What is Node.js? -->
+
+Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.
+It allows developers to use JavaScript to build server-side applications.
+Non-blocking and asynchronous nature, making it efficient for I/O-heavy operations.
+
+
+<!-- .........................................Key Features: -->
+
+<!-- Asynchronous & Event-Driven: -->
+
+All APIs of Node.js are asynchronous, meaning that the server doesn't wait for an API to return data.
+It uses an event-driven architecture.
+
+<!-- Single-Threaded but Scalable: -->
+
+Node.js operates on a single thread using the event loop, but can handle thousands of concurrent connections thanks to asynchronous I/O.
+
+
+    Fast Execution:
+
+Built on Chrome’s V8 JavaScript engine, Node.js compiles JavaScript into machine code for faster execution.
+
+    NPM (Node Package Manager):
+
+Comes with Node.js, providing a vast collection of libraries and modules for different tasks.
+
+    Common Use Cases:
+
+Web Servers: Node.js is excellent for real-time applications like chat applications or live updates.
+
+    APIs: Build RESTful APIs and microservices.
+
+Streaming Applications: Ideal for data streaming applications like video platforms.
+
+
+<!--........................................ Basic Example (Creating a Server): -->
+
+<!-- javascript -->
+
+const http = require('http');
+
+<!-- // Create a server -->
+
+ http.createServer((req, res) => {
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end('Hello World\n');
+}).listen(3000);   
+
+console.log('Server running at http://localhost:3000/');
+
+
+
+<!--............................. Explanation: -->
+
+This code creates a basic HTTP server that listens on port 3000 and responds with "Hello World".
+
+
+<!-- Important Modules in Node.js: -->
+
+
+{HTTP Module: }            For creating web servers and handling HTTP requests.
+File System (fs) Module:   For interacting with the file system.
+{Path Module: }            For working with file and directory paths.
+{Express.js (popular framework):}  Used for building robust APIs and web applications.
+
+
+% Event-Driven Model:
+
+
+Node.js uses an event-driven model, where the server initiates a callback function whenever an event occurs (e.g., data received, server request).
+Example:
+
+javascript
+
+
+const events = require('events');
+const eventEmitter = new events.EventEmitter();
+
+// Create an event handler
+
+
+const myEventHandler = () => {
+    console.log('I hear a scream!');
+}
+
+// Assign the event handler to an event
+
+eventEmitter.on('scream', myEventHandler);
+
+// Fire the 'scream' event
+
+
+eventEmitter.emit('scream');
+
+% Advantages of Node.js:
+
+Fast: Non-blocking I/O and V8 engine ensure fast execution.
+Single Codebase: Use JavaScript on both client and server.
+Large Ecosystem: Huge number of libraries through NPM.
+
+
+% Disadvantages of Node.js:
+
+
+Single-threaded: May struggle with CPU-intensive tasks.
+Callback Hell: Managing many nested callbacks can lead to complicated code (mitigated by promises and async/await).
